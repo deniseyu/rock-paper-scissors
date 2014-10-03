@@ -1,0 +1,29 @@
+<% if @choice %>
+
+<h1> You chose <%= @choice %>! The computer chose <%= @opp_choice %>!</h1>
+
+
+      <% if @outcome == "win" %>
+  <h3> You have won! </h3>
+      <% elsif @outcome == "tie" %>
+  <h3> This game was a draw!</h3>
+      <% elsif @outcome == "lose" %>
+  <h3> You have lost! You suck at this game! </h3>
+      <% end %>
+
+  <br><br>
+  <form action='/reset' method='POST'>
+    <input type='submit' value='Ragequit!'>
+  </form>
+
+<% else %>
+<h1>Choose one!</h1>
+
+<form action='/choice' method='POST'>
+  <input type='radio' name='choice' value='rock'><img src='/images/rock.jpeg'>
+  <input type='radio' name='choice' value='paper'><img src='/images/paper.jpeg'>
+  <input type='radio' name='choice' value='scissors'><img src='/images/scissors.jpeg'>
+  <br><input type='submit' value='Go!'>
+</form>
+
+<% end %>

@@ -22,6 +22,28 @@ class RPS < Sinatra::Base
     erb :index
   end
 
+  post '/reset' do 
+    session.clear
+    redirect '/'
+  end
+
+  get '/game' do 
+    player = session[:player]
+    @choice = player.choice
+    @opp_choice = session[:game_choice]
+    @outcome = session[:outcome]
+    erb :game
+  end
+
+  post '/choice' do 
+    player = session[:player]
+    player.choice = params[:choice].to_s
+    game_choice = GAME.randomize
+    session[:game_choice] = game_choice
+    session[:outcome] = GAME.outcome(player.choice, game_choice)
+    redirect '/game'
+  end
+
   # start the server if ruby file executed directly
   run! if app_file == $0
 
