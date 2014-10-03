@@ -1,0 +1,18 @@
+<h1>Let's play Rock Paper Scissors!</h1>
+<br><img src='/images/rock.jpeg' width='100'>
+<img src='/images/paper.jpeg' width='100'>
+<img src='/images/scissors.jpeg' width='100'>
+
+<% if @player %>
+
+<p>Welcome, <%= @player.name %>!
+
+<% else %>
+
+<br><br>
+<form action='/' method='post'>
+  <input type='text' name='name'>
+  <input type='submit' value='Submit'>
+</form>
+
+<% end %>
