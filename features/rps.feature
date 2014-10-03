@@ -10,14 +10,9 @@ Scenario: Starting the game
   When I click "Let's play"
   Then I should be on the game page
 
-Scenario: Picking an option
+Scenario: Playing the game
   Given I am on the game page
   When I choose Rock
-  Then I should know what my opponent chose
-
-Scenario: Learning the outcome
-  Given I have chosen an option
-  When I see my opponent's choice
-  Then I should know if I won or lose
-
+  And my opponent chooses Scissors
+  Then I should know that I won
 

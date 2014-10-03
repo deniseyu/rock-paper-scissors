@@ -38,23 +38,15 @@ Given(/^I am on the game page$/) do
 end
 
 When(/^I choose Rock$/) do
-  click('rock')
+  choose('rock')
+  click_button('Go!')
+  expect(current_path).to eq('/game')
 end
 
-Then(/^I should know what my opponent chose$/) do
-  expect(page).to have_content "You chose rock! The computer chose"
+When(/^my opponent chooses Scissors$/) do
+  game_choice = "scissors"
 end
 
-
-
-Given(/^I have chosen an option$/) do
-  pending # express the regexp above with the code you wish you had
-end
-
-When(/^I see my opponent's choice$/) do
-  pending # express the regexp above with the code you wish you had
-end
-
-Then(/^I should know if I won or lose$/) do
-  pending # express the regexp above with the code you wish you had
+Then(/^I should know that I won$/) do
+  expect(page).to have_content "You have won!"
 end
