@@ -5,7 +5,7 @@ require_relative 'game'
 class RPS < Sinatra::Base
   set :views, Proc.new{File.join(root, '..', "views")}
   set :public_dir, Proc.new{File.join(root, '..', "public")}
-  # set :public_folder, 'public'
+  set :public_folder, 'public'
   enable :sessions
 
   GAME = Game.new 
@@ -29,6 +29,13 @@ class RPS < Sinatra::Base
 
   get '/game' do 
     player = session[:player]
+    erb :game
+  end
+
+  post '/game' do 
+    player = session[:player]
+    @name = player.name 
+    @mode = params[:mode].to_s
     @choice = player.choice
     @opp_choice = session[:game_choice]
     @outcome = session[:outcome]
@@ -41,8 +48,17 @@ class RPS < Sinatra::Base
     game_choice = GAME.randomize
     session[:game_choice] = game_choice
     session[:outcome] = GAME.outcome(player.choice, game_choice)
-    redirect '/game'
+    redirect '/outcome'
   end
+
+  get '/outcome' do
+    player = session[:player]
+    @choice = player.choice
+    @opp_choice = session[:game_choice]
+    @outcome = session[:outcome]
+    erb :outcome
+  end
+
 
   # start the server if ruby file executed directly
   run! if app_file == $0

@@ -1,0 +1,19 @@
+<h1> You chose <%= @choice %>! Your opponent chose <%= @opp_choice %>!</h1>
+<h2><img src='/images/<%= @choice %>.png' width='200'> vs. <img src='/images/<%= @opp_choice %>.png' width='200'></h2>
+
+
+      <% if @outcome == "win" %>
+  <h3> Because <%= @choice %> beats <%= @opp_choice %>, you have won! </h3>
+      <% elsif @outcome == "tie" %>
+  <h3> This game was a draw!</h3>
+      <% elsif @outcome == "lose" %>
+  <h3> Because <%= @opp_choice %> beats <%= @choice %>, you have lost! You suck at this game! </h3>
+      <% end %>
+
+  <form action='/game' method='GET'>
+    <input type='submit' value='Again!'>
+  </form>
+  <br>
+  <form action='/reset' method='POST'>
+    <input type='submit' value='Ragequit!'>
+  </form>

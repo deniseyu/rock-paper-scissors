@@ -3,7 +3,7 @@ class Game
   attr_accessor :choices
 
   def initialize
-    @choices = ["rock", "paper", "scissors"]
+    @choices = ["rock", "paper", "scissors", "lizard", "spock"]
   end
 
   def randomize
@@ -14,8 +14,16 @@ class Game
 
     winning_hash = {
       "paper" => "rock",
+      "paper" => "spock",
       "rock" => "scissors",
-      "scissors" => "paper" }
+      "rock" => "lizard",
+      "scissors" => "paper", 
+      "scissors" => "lizard",
+      "lizard" => "paper", 
+      "lizard" => "spock", 
+      "spock" => "scissors", 
+      "spock" => "rock"
+      }
 
     if player_choice == game_choice
       "tie"

@@ -1,29 +1,43 @@
-<% if @choice %>
-
-<h1> You chose <%= @choice %>! The computer chose <%= @opp_choice %>!</h1>
-
-
-      <% if @outcome == "win" %>
-  <h3> You have won! </h3>
-      <% elsif @outcome == "tie" %>
-  <h3> This game was a draw!</h3>
-      <% elsif @outcome == "lose" %>
-  <h3> You have lost! You suck at this game! </h3>
-      <% end %>
-
-  <br><br>
-  <form action='/reset' method='POST'>
-    <input type='submit' value='Ragequit!'>
-  </form>
-
-<% else %>
-<h1>Choose one!</h1>
-
-<form action='/choice' method='POST'>
-  <input type='radio' name='choice' value='rock' id='rock'><img src='/images/rock.jpeg'>
-  <input type='radio' name='choice' value='paper' id='paper'><img src='/images/paper.jpeg'>
-  <input type='radio' name='choice' value='scissors' id='scissors'><img src='/images/scissors.jpeg'>
+<% if @mode == nil %>
+<h1>Do you want to play the computer or a friend?</h1>
+ <form action='/game' method='POST'>
+  <input type='radio' name='mode' value='computer' id='computer'>Play against the computer
+  <input type='radio' name='mode' value='friend' id='friend'>Play against a friend 
   <br><input type='submit' value='Go!'>
 </form>
+<% else %> 
+
+<% if @mode == "computer" %>
+
+<h1>Choose one, <%= @name %>!</h1>
+
+<form action='/choice' method='POST'>
+<div class='choice'>
+  <input type='radio' name='choice' value='rock' id='rock'><img src='/images/rock.png' width='100'>
+</div>
+<div class='choice'>
+  <input type='radio' name='choice' value='paper' id='paper'><img src='/images/paper.png' width='100'>
+</div>
+<div class='choice'>
+  <input type='radio' name='choice' value='scissors' id='scissors'><img src='/images/scissors.png' width='100'>
+</div>
+<div class='choice'>
+  <input type='radio' name='choice' value='lizard' id='lizard'><img src='/images/lizard.png' width='100'>
+</div>
+<div class='choice'>
+  <input type='radio' name='choice' value='spock' id='spock'><img src='/images/spock.png' width='120'>
+</div>
+  <br><input type='submit' value='Go!'>
+</form>
+
+<% elsif @mode == "friend" %>
+
+You are playing against a friend!
+
+<% else %>
+
+<p>Who will be your opponent today?</p>
+
+<% end %>
 
 <% end %>
