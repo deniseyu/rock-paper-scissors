@@ -1,0 +1,20 @@
+<h1>Choose one, <%= @friend.name %>!</h1>
+<br>
+<form action='/choice_friend_mode' method='POST'>
+<div class='choice'>
+  <input type='radio' name='friend_choice' value='rock' id='rock'><img src='/images/rock.png' width='100'>
+</div>
+<div class='choice'>
+  <input type='radio' name='friend_choice' value='paper' id='paper'><img src='/images/paper.png' width='100'>
+</div>
+<div class='choice'>
+  <input type='radio' name='friend_choice' value='scissors' id='scissors'><img src='/images/scissors.png' width='100'>
+</div>
+<div class='choice'>
+  <input type='radio' name='friend_choice' value='lizard' id='lizard'><img src='/images/lizard.png' width='100'>
+</div>
+<div class='choice'>
+  <input type='radio' name='friend_choice' value='spock' id='spock'><img src='/images/spock.png' width='120'>
+</div>
+  <br><input type='submit' value='Go!'>
+</form>

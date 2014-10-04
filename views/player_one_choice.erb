@@ -1,17 +1,6 @@
-<% if @mode == nil %>
-<h1>Do you want to play the computer or a friend?</h1>
- <form action='/game' method='POST'>
-  <input type='radio' name='mode' value='computer' id='computer'>Play against the computer
-  <input type='radio' name='mode' value='friend' id='friend'>Play against a friend 
-  <br><input type='submit' value='Go!'>
-</form>
-<% else %> 
-
-<% if @mode == "computer" %>
-
-<h1>Choose one, <%= @name %>!</h1>
-
-<form action='/choice' method='POST'>
+<% if !@player.choice %><h1>Choose one, <%= @player.name %>!</h1>
+<br>
+<form action='/player_one_choice' method='POST'>
 <div class='choice'>
   <input type='radio' name='choice' value='rock' id='rock'><img src='/images/rock.png' width='100'>
 </div>
@@ -30,14 +19,8 @@
   <br><input type='submit' value='Go!'>
 </form>
 
-<% elsif @mode == "friend" %>
-
-<a href='/vs_friend'>Let the battle begin!</a>
-
 <% else %>
 
-<p>You didn't pick an opponent! <a href='/game'>Go back!</a></p>
-
-<% end %>
+<a href='/player_two_choice'> <%= @friend.name %>'s turn!</a>
 
 <% end %>

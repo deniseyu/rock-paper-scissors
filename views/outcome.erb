@@ -3,11 +3,11 @@
 
 
       <% if @outcome == "win" %>
-  <h3> Because <%= @choice %> beats <%= @opp_choice %>, you have won! </h3>
+  <h1> Because <%= @choice %> beats <%= @opp_choice %>, you have won! Yay! </h1>
       <% elsif @outcome == "tie" %>
-  <h3> This game was a draw!</h3>
+  <h1> This game was a draw!</h1>
       <% elsif @outcome == "lose" %>
-  <h3> Because <%= @opp_choice %> beats <%= @choice %>, you have lost! You suck at this game! </h3>
+  <h1> Because <%= @opp_choice %> beats <%= @choice %>, you have lost! You suck at this game! </h1>
       <% end %>
 
   <form action='/game' method='GET'>

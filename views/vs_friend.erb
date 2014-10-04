@@ -1,0 +1,14 @@
+<% if !@friend %>
+<h1>Player 2, what's your name?</h1>
+<br>
+<form action='/vs_friend' method='POST'>
+  <input type='text' name='friend_name'>
+  <input type='submit' value='Go!'>
+</form>
+
+<% else %>
+
+  <a href='/player_one_choice'> <%= @player.name %>'s turn!</a>
+
+<% end %>
+
