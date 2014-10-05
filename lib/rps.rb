@@ -71,7 +71,7 @@ class RPS < Sinatra::Base
     @player.choice = params[:choice].to_s
     session[:choice] = @player.choice 
     @friend = session[:friend]
-    redirect '/player_two_choice' 
+    erb :player_one_choice 
   end
 
   get '/player_two_choice' do 
@@ -109,7 +109,6 @@ class RPS < Sinatra::Base
     @friend_choice = @friend.choice 
     erb :vs_friend
   end
-
 
 
 

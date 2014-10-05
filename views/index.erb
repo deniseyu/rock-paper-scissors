@@ -1,15 +1,20 @@
-<img src='/images/rpsls_text.png' width='600'>
+<section class="main_image"><img src='/images/rpsls_text.png' width='600'>
+</section>
+
+<section class="main_text">
+
+<p class="welcome">
 
 <% if @player %>
 
-<p>Welcome, <b><%= @player.name %></b>!
+Welcome, <b><%= @player.name %></b>!
 
-<p>Ready to play?</p>
-<p><a href='/game'>Let's play</a></p>
+<br>Ready to play?
+<br><br><a href='/game'>Let's play</a>
 
 <% else %>
 
-<p>What is your name???</p>
+<br>What is your name???</br>
 <br>
 <form action='/' method='post'>
   <input type='text' name='name'>
@@ -17,3 +22,8 @@
 </form>
 
 <% end %>
+
+</p>
+
+</section>
+

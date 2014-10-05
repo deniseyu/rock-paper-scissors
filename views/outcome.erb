@@ -1,3 +1,4 @@
+
 <h1> You chose <%= @choice %>! Your opponent chose <%= @opp_choice %>!</h1>
 <h2><img src='/images/<%= @choice %>.png' width='200'> vs. <img src='/images/<%= @opp_choice %>.png' width='200'></h2>
 
@@ -10,10 +11,8 @@
   <h1> Because <%= @opp_choice %> beats <%= @choice %>, you have lost! You suck at this game! </h1>
       <% end %>
 
-  <form action='/game' method='GET'>
-    <input type='submit' value='Again!'>
-  </form>
-  <br>
+  <br><br><br>
   <form action='/reset' method='POST'>
     <input type='submit' value='Ragequit!'>
   </form>
+

@@ -1,9 +1,11 @@
+
+<section class="mode">
 <% if @mode == nil %>
 <h1>Do you want to play the computer or a friend?</h1>
  <form action='/game' method='POST'>
-  <input type='radio' name='mode' value='computer' id='computer'>Play against the computer
-  <input type='radio' name='mode' value='friend' id='friend'>Play against a friend 
-  <br><input type='submit' value='Go!'>
+  <div class='mode'><input type='radio' name='mode' value='computer' id='computer'>Play against the computer</div>
+  <div class='mode'><input type='radio' name='mode' value='friend' id='friend'>Play against a friend </div>
+  <br><br><br><input type='submit' value='Go!'>
 </form>
 <% else %> 
 
@@ -12,22 +14,12 @@
 <h1>Choose one, <%= @name %>!</h1>
 
 <form action='/choice' method='POST'>
-<div class='choice'>
-  <input type='radio' name='choice' value='rock' id='rock'><img src='/images/rock.png' width='100'>
-</div>
-<div class='choice'>
-  <input type='radio' name='choice' value='paper' id='paper'><img src='/images/paper.png' width='100'>
-</div>
-<div class='choice'>
-  <input type='radio' name='choice' value='scissors' id='scissors'><img src='/images/scissors.png' width='100'>
-</div>
-<div class='choice'>
-  <input type='radio' name='choice' value='lizard' id='lizard'><img src='/images/lizard.png' width='100'>
-</div>
-<div class='choice'>
-  <input type='radio' name='choice' value='spock' id='spock'><img src='/images/spock.png' width='120'>
-</div>
-  <br><input type='submit' value='Go!'>
+  <input type='radio' name='choice' value='rock' id='rock'>  Rock<br><img src='/images/rock.png' width='100'>
+  <input type='radio' name='choice' value='paper' id='paper'>  Paper<br><img src='/images/paper.png' width='100'>
+  <input type='radio' name='choice' value='scissors' id='scissors'>  Scissors<br><img src='/images/scissors.png' width='100'>
+  <input type='radio' name='choice' value='lizard' id='lizard'>  Lizard<br><img src='/images/lizard.png' width='100'>
+  <input type='radio' name='choice' value='spock' id='spock'>  Spock <br><img src='/images/spock.png' width='120'>
+  <br><br><br><input type='submit' value='Go!'>
 </form>
 
 <% elsif @mode == "friend" %>
@@ -41,3 +33,6 @@
 <% end %>
 
 <% end %>
+
+</section>
+

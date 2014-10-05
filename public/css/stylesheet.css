@@ -1,5 +1,33 @@
+body { 
+  }
+
+section.mode {
+  margin-top: 10%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+section.main_image {
+  display: inline-block;
+}
+
+section.main_text {
+  margin-top: 10%;
+  display: inline-block;
+}
+
+p.welcome {
+  font-size: 36px;
+  margin-top: 10%;
+}
+
+div.mode {
+  display: inline-block;
+  width: 25%;
+}
+
 div.choice { 
   display: inline-block;
   width: 15%;
-
 }

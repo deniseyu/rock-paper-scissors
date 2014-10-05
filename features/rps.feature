@@ -16,7 +16,7 @@ Scenario: Starting the game
 
 Scenario: Playing the game
   Given I am on the game page
-  Then I should see two options to play against the computer or my friend
+  Then I should see options to play against the computer or a friend
 
 Scenario: Playing Vs Computer
   Given I chose to play against the computer

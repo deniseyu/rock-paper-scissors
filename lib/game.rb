@@ -10,7 +10,7 @@ class Game
     @choices.sample
   end
 
-  def outcome(player_choice, game_choice)
+  def outcome(choice_one, choice_two)
 
     winning_hash = {
       "paper" => "rock",
@@ -25,9 +25,9 @@ class Game
       "spock" => "rock"
       }
 
-    if player_choice == game_choice
+    if choice_one == choice_two
       "tie"
-    elsif winning_hash[player_choice] == game_choice
+    elsif winning_hash[choice_one] == choice_two
       "win"
     else
       "lose"
