@@ -2,8 +2,18 @@
 </section>
 
 <section class="main_text">
-
-<p class="welcome">
+<p class='welcome_rules'>
+  Rock crushes scissors
+  <br>Scissors cuts paper
+  <br>Paper disproves Spock
+  <br>Spock smashes scissors
+  <br>Scissors decapitates lizard
+  <br>Lizard poisons Spock
+  <br>Spock vaporizes rock
+  <br>Rock crushes lizard
+  <br>Lizard eats paper
+  <br>Paper covers rock
+<p class='welcome'>
 
 <% if @player %>
 
@@ -14,7 +24,7 @@ Welcome, <b><%= @player.name %></b>!
 
 <% else %>
 
-<br>What is your name???</br>
+<br>What is your name???
 <br>
 <form action='/' method='post'>
   <input type='text' name='name'>

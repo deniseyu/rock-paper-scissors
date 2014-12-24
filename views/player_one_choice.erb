@@ -1,3 +1,5 @@
+<section class='mode'>
+
 <% if !@player.choice %><h1>Choose one, <%= @player.name %>!</h1>
 <br>
 <form action='/player_one_choice' method='POST'>
@@ -16,7 +18,7 @@
 <div class='choice'>
   <input type='radio' name='choice' value='spock' id='spock'><img src='/images/spock.png' width='120'>
 </div>
-  <br><input type='submit' value='Go!'>
+  <br><br><input type='submit' value='Go!'>
 </form>
 
 <% else %>
@@ -24,3 +26,5 @@
 <a href='/player_two_choice'> <%= @friend.name %>'s turn!</a>
 
 <% end %>
+
+</section>

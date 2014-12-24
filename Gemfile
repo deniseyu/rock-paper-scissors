@@ -1,7 +1,6 @@
 source 'https://rubygems.org'
 
 gem 'sinatra'
-gem 'datamapper'
 
 group :development, :test do
   gem 'capybara'

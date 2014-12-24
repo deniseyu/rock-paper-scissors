@@ -1,0 +1,19 @@
+<% unless @player %>
+
+<h1>Let's play Rock, Paper, Scissors, Lizard, Spock!</h1>
+
+<h2>What is your name?</h2>
+<form action='/new_game' method='POST'>
+  <input type='text' name='name' id='name-box'>
+  <input type='submit' value='Submit' id='name-submit'>
+</form>
+
+<% else %>
+
+  <h2>Welcome, <%= @player.name %>!</h2>
+  <p>Would you like to play against the computer or against a friend?</p>
+
+  <p><a href='/vs_computer'>Play Against Computer</a></p>
+  <!-- <p><a href='#'>Play Against Friend</a></p> -->
+
+<% end %>

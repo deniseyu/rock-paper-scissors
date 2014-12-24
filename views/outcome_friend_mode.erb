@@ -1,3 +1,5 @@
+<section class='outcome'>
+
 <h1> <%= @player.name %> chose <%= @player.choice %>! <%= @friend.name %> chose <%= @friend.choice %>!</h1>
 <h2><img src='/images/<%= @player.choice %>.png' width='200'> vs. <img src='/images/<%= @friend.choice %>.png' width='200'></h2>
 
@@ -14,3 +16,5 @@
   <form action='/reset' method='POST'>
     <input type='submit' value='Ragequit!'>
   </form>
+
+</section>

@@ -7,18 +7,19 @@
   <div class='mode'><input type='radio' name='mode' value='friend' id='friend'>Play against a friend </div>
   <br><br><br><input type='submit' value='Go!'>
 </form>
-<% else %> 
+<% else %>
 
 <% if @mode == "computer" %>
 
 <h1>Choose one, <%= @name %>!</h1>
 
 <form action='/choice' method='POST'>
-  <input type='radio' name='choice' value='rock' id='rock'>  Rock<br><img src='/images/rock.png' width='100'>
-  <input type='radio' name='choice' value='paper' id='paper'>  Paper<br><img src='/images/paper.png' width='100'>
-  <input type='radio' name='choice' value='scissors' id='scissors'>  Scissors<br><img src='/images/scissors.png' width='100'>
-  <input type='radio' name='choice' value='lizard' id='lizard'>  Lizard<br><img src='/images/lizard.png' width='100'>
-  <input type='radio' name='choice' value='spock' id='spock'>  Spock <br><img src='/images/spock.png' width='120'>
+  <div class='choice'><input type='radio' name='choice' value='rock' id='rock'>  Rock<br><img src='/images/rock.png' width='100'></div>
+  <div class='choice'>
+  <input type='radio' name='choice' value='paper' id='paper'>  Paper<br><img src='/images/paper.png' width='100'></div>
+  <div class='choice'><input type='radio' name='choice' value='scissors' id='scissors'>  Scissors<br><img src='/images/scissors.png' width='100'></div>
+  <div class='choice'><input type='radio' name='choice' value='lizard' id='lizard'>  Lizard<br><img src='/images/lizard.png' width='100'></div>
+  <div class='choice'><input type='radio' name='choice' value='spock' id='spock'>  Spock <br><img src='/images/spock.png' width='100'></div>
   <br><br><br><input type='submit' value='Go!'>
 </form>
 

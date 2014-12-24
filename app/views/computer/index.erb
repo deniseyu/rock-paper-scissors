@@ -1,0 +1,27 @@
+<% if @player.choice == nil %>
+
+<h2>Make your selection!</h2>
+
+  <form action='/vs_computer' method='POST' id='player-select'>
+    <p><input type='radio' name='choice' value='rock' id='rock-choice'>Rock</p>
+    <p><input type='radio' name='choice' value='paper'>Paper</p>
+    <p><input type='radio' name='choice' value='scissors'>Scissors</p>
+    <p><input type='radio' name='choice' value='spock'>Spock</p>
+    <p><input type='radio' name='choice' value='lizard'>Lizard</p>
+    <input type='submit' value='Play!' id='play-button'>
+  </form>
+
+<% else %>
+
+  You chose <%= @player.choice.type %>! Computer chose <%= @computer_choice.type %>!
+
+  <%= @outcome %>
+
+  <form action='/again' method='POST'>
+    <input type='submit' value='Again!' id='again-button'>
+  </form>
+
+<% end %>
+<h3>
+Your current score: <%= @player.score %>
+</h3>
